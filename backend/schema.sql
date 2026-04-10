@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS anomaly_detection;
+
+USE anomaly_detection;
+
+CREATE TABLE IF NOT EXISTS Users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS Login_History (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    ip_address VARCHAR(45) NOT NULL,
+    location VARCHAR(255),
+    device VARCHAR(255),
+    login_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    risk_score INT DEFAULT 0,
+    is_suspicious BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE
+);

@@ -1,0 +1,58 @@
+TECH STACK DOCUMENT
+Project Title: Login Anomaly Detection System
+
+1. FRONTEND
+
+* React.js
+  Purpose: Build responsive UI
+* Axios
+  Purpose: API communication
+
+2. BACKEND
+
+* Node.js
+  Purpose: Server runtime
+* Express.js
+  Purpose: REST API development
+
+3. DATABASE
+
+* MySQL
+  Purpose: Store user and login data
+* mysql2 package
+  Purpose: Connect Node.js with MySQL
+
+4. AUTHENTICATION
+
+* JSON Web Token (JWT)
+  Purpose: Secure user sessions
+* bcrypt
+  Purpose: Password hashing
+
+5. GEOLOCATION & IP TRACKING
+
+* ip-api.com (or similar free API)
+  Purpose: Get location from IP
+
+6. DEVICE DETECTION
+
+* user-agent parser library
+  Purpose: Detect browser/device
+
+7. SECURITY
+
+* Helmet.js
+  Purpose: Secure HTTP headers
+* Express Rate Limit
+  Purpose: Prevent brute force attacks
+
+8. DEVELOPMENT TOOLS
+
+* VS Code
+* Postman
+* MySQL Workbench
+
+9. OPTIONAL ENHANCEMENTS
+
+* Redis (for caching)
+* Nodemailer (email alerts)

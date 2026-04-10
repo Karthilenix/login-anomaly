@@ -1,0 +1,50 @@
+PROJECT REQUIREMENT DOCUMENT
+Project Title: Login Anomaly Detection System
+
+1. OBJECTIVE
+   The objective of this project is to design and develop a secure login system that detects anomalous login behavior based on user patterns such as location, IP address, device, and login time.
+
+2. PROBLEM STATEMENT
+   Traditional authentication systems rely only on username and password, which are vulnerable to attacks. This system aims to enhance security by identifying suspicious login attempts.
+
+3. FUNCTIONAL REQUIREMENTS
+
+* User Registration and Login
+* Store user login history (IP, location, device, timestamp)
+* Detect anomalies based on:
+
+  * New IP address
+  * Unusual geographic location
+  * New device/browser
+  * Abnormal login time
+* Alert user on suspicious login (UI alert or email simulation)
+* Dashboard to view login history
+* Risk score calculation for each login
+
+4. NON-FUNCTIONAL REQUIREMENTS
+
+* Secure password storage (hashing)
+* Fast response time (< 2 seconds)
+* Scalable backend
+* Data privacy and protection
+
+5. USER ROLES
+
+* User: Login, view history
+* Admin (optional): Monitor system logs
+
+6. ASSUMPTIONS
+
+* IP-based geolocation is approximate
+* Users typically login from consistent patterns
+
+7. CONSTRAINTS
+
+* Limited real-time threat intelligence integration
+* Project scope limited to simulation-level anomaly detection
+
+8. FUTURE ENHANCEMENTS
+
+* Machine learning-based anomaly detection
+* Integration with threat intelligence APIs
+* Multi-factor authentication (MFA)

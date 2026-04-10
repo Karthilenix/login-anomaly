@@ -1,0 +1,78 @@
+SYSTEM DESIGN DOCUMENT
+Project Title: Login Anomaly Detection System
+
+1. ARCHITECTURE
+
+* Frontend: React.js
+* Backend: Node.js (Express)
+* Database: MySQL
+
+2. HIGH-LEVEL FLOW
+   User Login → Backend Authentication → Capture Metadata → Store in DB → Run Anomaly Detection → Return Risk Score → Show Alert
+
+3. DATABASE DESIGN
+
+TABLE: Users
+
+* id (PK)
+* email
+* password_hash
+* created_at
+
+TABLE: Login_History
+
+* id (PK)
+* user_id (FK)
+* ip_address
+* location
+* device
+* login_time
+* risk_score
+
+4. ANOMALY DETECTION LOGIC
+
+Rules:
+
+* New IP → +30 risk
+* New Location → +30 risk
+* New Device → +20 risk
+* Odd login time → +20 risk
+
+If risk_score > 50 → Mark as suspicious
+
+5. COMPONENTS
+
+Frontend:
+
+* Login Page
+* Dashboard
+* Alerts
+
+Backend:
+
+* Auth Controller
+* Anomaly Detection Service
+* Logging Middleware
+
+6. API DESIGN
+
+POST /register
+POST /login
+GET /login-history
+GET /risk-analysis
+
+7. SECURITY DESIGN
+
+* Password hashing (bcrypt)
+* JWT authentication
+* Input validation
+* Rate limiting
+
+8. DATA FLOW
+   Client → API → Authentication → DB → Anomaly Engine → Response
+
+9. ERROR HANDLING
+
+* Invalid credentials
+* DB connection issues
+* API failure handling
