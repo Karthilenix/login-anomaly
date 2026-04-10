@@ -1,10 +1,10 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
-import Register from './pages/Register.tsx';
-import Dashboard from './pages/Dashboard.tsx';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
 
-const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
+const PrivateRoute = ({ children }: { children: ReactNode }) => {
   const token = localStorage.getItem('token');
   return token ? <>{children}</> : <Navigate to="/login" />;
 };
