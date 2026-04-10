@@ -24,6 +24,11 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+// Health Check Route
+app.get('/', (req, res) => {
+    res.json({ status: 'success', message: 'Anomaly Detection API is running efficiently!' });
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/history', historyRoutes);
